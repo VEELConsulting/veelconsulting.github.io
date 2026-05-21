@@ -862,3 +862,233 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   background: rgba(200,169,110,0.22);
   color: var(--c-text);
 }
+
+/* ============================================
+   WORK CATALOGUE & INNER PAGES
+   ============================================ */
+
+.page-hero { padding-top: calc(var(--nav-h) + 4rem); }
+.page-hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.page-hero__sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--c-text-2);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.catalogue__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.catalogue__filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  border: var(--glass-border);
+  background: transparent;
+  color: var(--c-text-2);
+  font-size: 0.8125rem;
+  font-family: 'Satoshi', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--c-text);
+  color: var(--c-bg);
+  border-color: var(--c-text);
+}
+
+.catalogue__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+}
+.catalogue-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-surface);
+  border: var(--glass-border);
+  transition: transform 0.4s var(--ease-silk), box-shadow 0.4s var(--ease-silk);
+}
+.catalogue-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); }
+[data-theme="dark"] .catalogue-card:hover { box-shadow: 0 24px 80px rgba(0,0,0,0.5); }
+.catalogue-card__img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+.catalogue-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,12,20,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-silk);
+}
+.catalogue-card:hover .catalogue-card__overlay { opacity: 1; }
+.catalogue-card__info { padding: 1.75rem 2rem; }
+.catalogue-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.catalogue-card__year { font-size: 0.75rem; color: var(--c-text-3); }
+.catalogue-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.625rem;
+}
+.catalogue-card__desc {
+  font-size: 0.875rem;
+  color: var(--c-text-2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.catalogue-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+.catalogue-card__tags span {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--c-gold);
+  background: rgba(200,169,110,0.08);
+  border: 1px solid rgba(200,169,110,0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+/* ============================================
+   INSIGHTS FEATURED
+   ============================================ */
+.insights-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) { .insights-featured { grid-template-columns: 1fr; } }
+.insights-featured__img { aspect-ratio: 4/3; overflow: hidden; }
+.insights-featured__img .work-card__placeholder { width: 100%; height: 100%; }
+.insights-featured__content {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.insights-featured__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+.insights-featured__title a { color: inherit; transition: color 0.3s; }
+.insights-featured__title a:hover { color: var(--c-gold); }
+.insights-featured__excerpt { color: var(--c-text-2); line-height: 1.7; font-size: 0.9375rem; }
+.article-byline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--c-text-3);
+}
+.article-byline .sep { color: var(--c-border); }
+
+/* ============================================
+   ARTICLE PAGE
+   ============================================ */
+.article-hero {
+  padding-top: calc(var(--nav-h) + 4rem);
+  padding-bottom: 4rem;
+  background: var(--c-bg-2);
+  border-bottom: var(--glass-border);
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.article-cat {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  background: rgba(200,169,110,0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid rgba(200,169,110,0.15);
+}
+.article-read { font-size: 0.8rem; color: var(--c-text-3); }
+.article-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  max-width: 760px;
+}
+.article-excerpt {
+  font-size: 1.125rem;
+  color: var(--c-text-2);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+.article-body { padding: 5rem 0; }
+.article-content {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--c-text);
+}
+.article-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 3rem 0 1rem;
+  color: var(--c-text);
+}
+.article-content p { margin-bottom: 1.5rem; color: var(--c-text-2); }
+.article-content ul, .article-content ol {
+  margin: 0 0 1.5rem 1.5rem;
+  color: var(--c-text-2);
+}
+.article-content li { margin-bottom: 0.5rem; line-height: 1.7; }
+.article-content strong { color: var(--c-text); font-weight: 600; }
+.article-content hr {
+  border: none;
+  border-top: var(--glass-border);
+  margin: 3rem 0;
+}
+.article-content em { font-style: italic; color: var(--c-text-3); }
+.article-cta {
+  max-width: 680px;
+  margin: 4rem auto 0;
+  padding: 2.5rem 3rem;
+  text-align: center;
+}
+.article-cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0.5rem 0 1.5rem;
+}
