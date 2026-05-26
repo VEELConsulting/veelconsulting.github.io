@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Design — VEEL Consulting</title>
+  <meta name="description" content="Bespoke, performance-first web design for ambitious brands. Built to convert, built to last." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Satoshi:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo"><span>VEEL</span></a>
+      <ul class="nav__links">
+        <li><a href="../web-design/index.html" style="color:var(--c-text)">Web Design</a></li>
+        <li><a href="../salesforce/index.html">Salesforce</a></li>
+        <li><a href="../insights/index.html">Insights</a></li>
+        <li><a href="../about/index.html">About</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+        <a href="../contact/index.html" class="btn btn--outline">Contact</a>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <ul>
+        <li><a href="../web-design/index.html">Web Design</a></li>
+        <li><a href="../salesforce/index.html">Salesforce</a></li>
+        <li><a href="../insights/index.html">Insights</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero section" style="background:var(--c-bg-2); border-bottom: var(--glass-border);">
+    <div class="hero__bg" style="position:absolute;inset:0;pointer-events:none;">
+      <div class="hero__orb hero__orb--1" style="opacity:.5;"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="page-hero__inner reveal">
+        <span class="section__label">Web Design</span>
+        <h1 class="page-hero__title">Websites that <em>earn their keep.</em></h1>
+        <p class="page-hero__sub">From brand-new launches to full redesigns — every site we build is precision-engineered to attract, engage, and convert the clients you actually want.</p>
+        <div style="margin-top:2rem;display:flex;gap:0.875rem;flex-wrap:wrap;">
+          <a href="../contact/index.html" class="btn btn--primary btn--large">Start a Project</a>
+          <a href="#work" class="btn btn--ghost btn--large">See Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>UX & UI Design</span><span class="sep">◆</span>
+      <span>Responsive Development</span><span class="sep">◆</span>
+      <span>E-Commerce</span><span class="sep">◆</span>
+      <span>Brand Identity</span><span class="sep">◆</span>
+      <span>Performance Optimisation</span><span class="sep">◆</span>
+      <span>SEO-Ready Architecture</span><span class="sep">◆</span>
+      <span>UX & UI Design</span><span class="sep">◆</span>
+      <span>Responsive Development</span><span class="sep">◆</span>
+      <span>E-Commerce</span><span class="sep">◆</span>
+      <span>Brand Identity</span><span class="sep">◆</span>
+      <span>Performance Optimisation</span><span class="sep">◆</span>
+      <span>SEO-Ready Architecture</span><span class="sep">◆</span>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">The Service</span>
+        <h2 class="section__title">What's included in <em>every engagement</em></h2>
+      </div>
+      <div class="service-intro">
+        <div class="service-intro__text reveal">
+          <h3>Design that does a job</h3>
+          <p>Beautiful isn't enough. Every VEEL website is designed around a singular goal — growth. We start with your business objectives, map your ideal customer's journey, and engineer every pixel to serve that journey.</p>
+          <p>We work in an iterative, collaborative process. You'll never be left wondering where your project is. From discovery call to launch, we maintain clear timelines and open communication.</p>
+          <p>Our sites are fast, accessible, and built to rank. We don't hand you a slow-loading template — we build you a machine.</p>
+        </div>
+        <div class="reveal reveal--delay-1">
+          <div class="process-list">
+            <div class="process-step">
+              <div class="process-step__num">01</div>
+              <div class="process-step__body">
+                <h4>Discovery & Strategy</h4>
+                <p>Deep dive into your brand, your customers, and your competitors. We emerge with a clear brief and a creative direction.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step__num">02</div>
+              <div class="process-step__body">
+                <h4>Design & Prototyping</h4>
+                <p>High-fidelity Figma designs that let you see and feel the site before a line of code is written.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step__num">03</div>
+              <div class="process-step__body">
+                <h4>Development</h4>
+                <p>Clean, semantic HTML/CSS/JS — or your preferred CMS. Performance-first. Mobile-first. Every time.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step__num">04</div>
+              <div class="process-step__body">
+                <h4>Launch & Handover</h4>
+                <p>Full QA across devices, SEO technical audit, and a handover session so your team owns it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIERS -->
+      <div class="section__header reveal" style="margin-top:1rem;">
+        <span class="section__label">Investment</span>
+        <h2 class="section__title">Choose your <em>starting point</em></h2>
+      </div>
+      <div class="tiers-grid">
+        <div class="tier-card reveal reveal--delay-1">
+          <span class="tier-card__badge">Essentials</span>
+          <div class="tier-card__name">Foundation</div>
+          <div class="tier-card__price">From £2,500</div>
+          <ul class="tier-card__features">
+            <li>Up to 5 pages</li>
+            <li>Mobile-responsive design</li>
+            <li>Basic SEO setup</li>
+            <li>Contact form integration</li>
+            <li>2 rounds of revisions</li>
+            <li>3-week delivery</li>
+          </ul>
+          <a href="../contact/index.html" class="btn btn--outline" style="width:100%;justify-content:center;">Get Started</a>
+        </div>
+        <div class="tier-card tier-card--featured reveal reveal--delay-2">
+          <span class="tier-card__badge">Most Popular</span>
+          <div class="tier-card__name">Growth</div>
+          <div class="tier-card__price">From £5,500</div>
+          <ul class="tier-card__features">
+            <li>Up to 12 pages</li>
+            <li>Custom UI design system</li>
+            <li>Animations & micro-interactions</li>
+            <li>CMS integration (Webflow / Sanity)</li>
+            <li>Technical SEO audit</li>
+            <li>Performance optimisation</li>
+            <li>3 rounds of revisions</li>
+            <li>5-week delivery</li>
+          </ul>
+          <a href="../contact/index.html" class="btn btn--primary" style="width:100%;justify-content:center;">Start a Conversation</a>
+        </div>
+        <div class="tier-card reveal reveal--delay-3">
+          <span class="tier-card__badge">Enterprise</span>
+          <div class="tier-card__name">Bespoke</div>
+          <div class="tier-card__price">Custom pricing</div>
+          <ul class="tier-card__features">
+            <li>Unlimited scope</li>
+            <li>Full brand identity</li>
+            <li>E-commerce / booking systems</li>
+            <li>Custom integrations</li>
+            <li>Ongoing retainer available</li>
+            <li>Priority support</li>
+            <li>Dedicated delivery timeline</li>
+          </ul>
+          <a href="../contact/index.html" class="btn btn--outline" style="width:100%;justify-content:center;">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="catalogue__header reveal">
+        <div>
+          <span class="section__label">Portfolio</span>
+          <h2 class="section__title" style="margin-bottom:0;">Selected <em>web design work</em></h2>
+        </div>
+        <div class="catalogue__filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="brand">Brand</button>
+          <button class="filter-btn" data-filter="corporate">Corporate</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+        </div>
+      </div>
+      <div class="catalogue__grid">
+        <div class="catalogue-card reveal reveal--delay-1" data-category="brand">
+          <div class="catalogue-card__img"><div class="work-card__placeholder wp--ocean"><div class="wp__inner"><svg viewBox="0 0 60 40" fill="none"><path d="M5 30 Q15 10 25 20 Q35 30 45 15 Q52 5 58 12" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity=".6"/></svg></div></div><div class="catalogue-card__overlay"><a href="../contact/index.html" class="btn btn--primary">Start Similar →</a></div></div>
+          <div class="catalogue-card__info"><div class="catalogue-card__meta"><span class="work-card__cat">Brand</span><span class="catalogue-card__year">2025</span></div><h3 class="catalogue-card__title">Oceanis Yachts</h3><p class="catalogue-card__desc">Full brand identity and experience platform for a luxury yacht charter company. 340% increase in qualified enquiries post-launch.</p><div class="catalogue-card__tags"><span>Web Design</span><span>Branding</span><span>E-Commerce</span></div></div>
+        </div>
+        <div class="catalogue-card reveal reveal--delay-2" data-category="corporate">
+          <div class="catalogue-card__img"><div class="work-card__placeholder wp--night"><div class="wp__inner"><svg viewBox="0 0 60 40" fill="none"><rect x="10" y="18" width="40" height="14" rx="2" stroke="white" stroke-width="1.5" opacity=".4"/><path d="M15 18V14a3 3 0 0 1 3-3h24a3 3 0 0 1 3 3v4" stroke="white" stroke-width="1.5" opacity=".4"/></svg></div></div><div class="catalogue-card__overlay"><a href="../contact/index.html" class="btn btn--primary">Start Similar →</a></div></div>
+          <div class="catalogue-card__info"><div class="catalogue-card__meta"><span class="work-card__cat">Corporate</span><span class="catalogue-card__year">2025</span></div><h3 class="catalogue-card__title">Pinnacle Resorts</h3><p class="catalogue-card__desc">Premium hospitality website with real-time booking integration and editorial content system.</p><div class="catalogue-card__tags"><span>Web Design</span><span>UX</span><span>Booking</span></div></div>
+        </div>
+        <div class="catalogue-card reveal reveal--delay-3" data-category="ecommerce">
+          <div class="catalogue-card__img"><div class="work-card__placeholder wp--gold"><div class="wp__inner"><svg viewBox="0 0 60 40" fill="none"><circle cx="30" cy="20" r="14" stroke="white" stroke-width="1.5" opacity=".5"/><circle cx="30" cy="20" r="8" stroke="white" stroke-width="1" opacity=".4"/></svg></div></div><div class="catalogue-card__overlay"><a href="../contact/index.html" class="btn btn--primary">Start Similar →</a></div></div>
+          <div class="catalogue-card__info"><div class="catalogue-card__meta"><span class="work-card__cat">E-Commerce</span><span class="catalogue-card__year">2026</span></div><h3 class="catalogue-card__title">Maison Étoile</h3><p class="catalogue-card__desc">Luxury retail experience with custom product configurator and seamless checkout flow.</p><div class="catalogue-card__tags"><span>Web Design</span><span>E-Commerce</span><span>UI/UX</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner section">
+    <div class="cta-banner__bg"><div class="cta-banner__orb"></div></div>
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <span class="section__label">Start a Project</span>
+        <h2 class="cta-banner__title">Your brand.<br /><em>Our craft.</em></h2>
+        <p>Let's build a digital presence that commands attention and converts browsers into clients.</p>
+        <div class="cta-banner__actions">
+          <a href="../contact/index.html" class="btn btn--primary btn--large">Start a Conversation</a>
+          <a href="tel:+447700000000" class="btn btn--call btn--large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="padding-top:0;border-top:none;">
+        <span>© 2026 VEEL Consulting.</span>
+        <a href="../index.html" style="color:var(--c-gold);font-family:'Playfair Display',serif;letter-spacing:.12em;">VEEL</a>
+        <div class="footer__legal"><a href="../index.html#contact">Contact</a><a href="../about/index.html">About</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
