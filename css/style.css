@@ -71,7 +71,7 @@ html, body {
   overflow-x: hidden;
 }
 /* Hard clip every direct section so nothing bleeds out */
-section, header, footer, nav, .marquee-strip {
+section, header, footer, .marquee-strip {
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -487,7 +487,7 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  min-width: 200%;
+  width: max-content;
   animation: marqueeScroll 30s linear infinite;
   will-change: transform;
 }
@@ -496,11 +496,12 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   display: inline-flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  flex: 0 0 50%;
+  flex-shrink: 0;
   gap: 2.5rem;
   padding-right: 2.5rem;
   white-space: nowrap;
   align-items: center;
+  width: max-content;
 }
 .marquee-track span {
   font-size: 0.72rem;
