@@ -335,6 +335,8 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   padding-top: var(--nav-h);
   max-width: 100%;
   width: 100%;
+  contain: paint;
+  transform: translateZ(0);
 }
 .hero__bg { position: absolute; inset: 0; pointer-events: none; }
 .hero__gradient {
@@ -351,12 +353,23 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
 .hero__orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(60px);
   animation: orbFloat 8s ease-in-out infinite;
+  /* Prevent filter from painting outside parent on iOS Safari */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
-.hero__orb--1 { width: min(500px,80vw); height: min(500px,80vw); background: rgba(142,197,208,0.12); top: -10%; right: 5%; }
-.hero__orb--2 { width: min(350px,60vw); height: min(350px,60vw); background: rgba(200,169,110,0.09); bottom: 10%; left: -5%; animation-delay: -3s; }
-.hero__orb--3 { width: min(250px,40vw); height: min(250px,40vw); background: rgba(91,168,184,0.07); top: 40%; left: 40%; animation-delay: -5s; }
+@supports (-webkit-overflow-scrolling: touch) {
+  /* iOS Safari: clip filter bleed by reducing blur and pulling orbs inward */
+  .hero__orb { filter: blur(40px); }
+  .hero__orb--1 { right: 15%; top: 0%; }
+  .hero__orb--2 { left: 5%; }
+  .hero__orb--3 { left: 35%; }
+}
+.hero__orb--1 { width: min(400px,60vw); height: min(400px,60vw); background: rgba(142,197,208,0.12); top: -10%; right: 10%; }
+.hero__orb--2 { width: min(300px,50vw); height: min(300px,50vw); background: rgba(200,169,110,0.09); bottom: 10%; left: 0%; animation-delay: -3s; }
+.hero__orb--3 { width: min(200px,35vw); height: min(200px,35vw); background: rgba(91,168,184,0.07); top: 40%; left: 38%; animation-delay: -5s; }
 [data-theme="dark"] .hero__orb--1 { background: rgba(91,168,184,0.08); }
 [data-theme="dark"] .hero__orb--2 { background: rgba(200,169,110,0.06); }
 @keyframes orbFloat {
@@ -720,12 +733,13 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
 .cta-banner__bg { position: absolute; inset: 0; pointer-events: none; }
 .cta-banner__orb {
   position: absolute;
-  width: 600px; height: 600px;
+  width: min(600px, 100vw); height: min(600px, 100vw);
   border-radius: 50%;
   background: radial-gradient(circle, rgba(91,168,184,0.1) 0%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
   animation: orbFloat 10s ease-in-out infinite;
+  filter: none;
 }
 [data-theme="dark"] .cta-banner__orb {
   background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 70%);
@@ -835,6 +849,8 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   padding-bottom: clamp(3rem, 6vw, 5rem);
   position: relative;
   overflow: hidden;
+  contain: paint;
+  transform: translateZ(0);
 }
 .page-hero__inner { max-width: 800px; }
 .page-hero__title {
