@@ -307,43 +307,58 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   transition: all 0.3s;
 }
 .nav__mobile {
-  /* Use visibility+opacity instead of display so we can animate */
   display: block;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   transition:
-    opacity 0.3s var(--ease-silk),
-    transform 0.3s var(--ease-silk),
-    visibility 0s linear 0.3s;
-  /* Always-on glass — independent of nav scroll state */
-  background: var(--c-surface);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border-bottom: var(--glass-border);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  padding: 1.25rem clamp(1.25rem, 5vw, 3rem) 1.5rem;
-  /* Sits below fixed nav bar */
+    opacity 0.28s var(--ease-silk),
+    transform 0.28s var(--ease-silk),
+    visibility 0s linear 0.28s;
+  /* Solid enough background for iOS Safari backdrop-filter to render */
+  background: rgba(8, 12, 20, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(200,169,110,0.15);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  padding: 0.5rem clamp(1.25rem, 5vw, 3rem) 1.75rem;
   position: fixed;
   top: var(--nav-h);
   left: 0;
   right: 0;
   z-index: 99;
+  /* Force GPU layer so iOS renders the blur correctly */
+  -webkit-transform: translateZ(0) translateY(-6px);
+  transform: translateZ(0) translateY(-6px);
+  will-change: opacity, transform;
+}
+[data-theme="light"] .nav__mobile {
+  background: rgba(250, 248, 244, 0.94);
 }
 .nav__mobile.open {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  -webkit-transform: translateZ(0) translateY(0);
+  transform: translateZ(0) translateY(0);
   transition:
-    opacity 0.3s var(--ease-silk),
-    transform 0.3s var(--ease-silk),
+    opacity 0.28s var(--ease-silk),
+    transform 0.28s var(--ease-silk),
     visibility 0s linear 0s;
 }
-.nav__mobile li { padding: 0.875rem 0; border-bottom: 1px solid var(--c-border-2); }
+.nav__mobile li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(200,169,110,0.1);
+}
 .nav__mobile li:last-child { border-bottom: none; }
-.nav__mobile a { font-size: 1.0625rem; color: var(--c-text-2); }
+.nav__mobile a {
+  font-size: 1.125rem;
+  color: var(--c-text);
+  display: block;
+  transition: color 0.2s;
+}
+.nav__mobile a:hover { color: var(--c-gold); }
 
 @media (max-width: 768px) {
   .nav__links, .nav__actions .btn--outline { display: none; }
