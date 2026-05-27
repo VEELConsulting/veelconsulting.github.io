@@ -22,8 +22,36 @@
   // ── MOBILE BURGER ──────────────────────────
   const burger = document.getElementById('navBurger');
   const mobileNav = document.getElementById('navMobile');
-  burger?.addEventListener('click', () => mobileNav?.classList.toggle('open'));
-  mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  function openMenu() {
+    mobileNav?.classList.add('open');
+    nav?.classList.add('menu-open');
+    burger?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    mobileNav?.classList.remove('open');
+    nav?.classList.remove('menu-open');
+    burger?.setAttribute('aria-expanded', 'false');
+  }
+
+  burger?.addEventListener('click', () => {
+    mobileNav?.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // Close smoothly when scrolling starts
+  let scrollCloseTimer;
+  window.addEventListener('scroll', () => {
+    if (mobileNav?.classList.contains('open')) {
+      clearTimeout(scrollCloseTimer);
+      scrollCloseTimer = setTimeout(closeMenu, 80);
+    }
+  }, { passive: true });
+
+  // Close when a nav link is clicked
+  mobileNav?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
 
   // ── REVEAL ON SCROLL ───────────────────────
   const reveals = document.querySelectorAll('.reveal');
