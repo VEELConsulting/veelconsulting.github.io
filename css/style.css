@@ -484,17 +484,23 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
 }
 .marquee-inner {
   display: flex;
-  width: max-content;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-width: 200%;
   animation: marqueeScroll 30s linear infinite;
   will-change: transform;
 }
 .marquee-inner:hover { animation-play-state: paused; }
 .marquee-track {
   display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 0 0 50%;
   gap: 2.5rem;
   padding-right: 2.5rem;
-  flex-shrink: 0;
   white-space: nowrap;
+  align-items: center;
 }
 .marquee-track span {
   font-size: 0.72rem;
