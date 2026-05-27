@@ -219,7 +219,8 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   height: var(--nav-h);
   transition: background 0.5s var(--ease-silk), box-shadow 0.5s var(--ease-silk);
 }
-.nav.scrolled {
+.nav.scrolled,
+.nav.menu-open {
   background: var(--c-surface);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -306,14 +307,40 @@ em { font-style: italic; font-family: 'Playfair Display', serif; }
   transition: all 0.3s;
 }
 .nav__mobile {
-  display: none;
+  /* Use visibility+opacity instead of display so we can animate */
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.3s var(--ease-silk),
+    transform 0.3s var(--ease-silk),
+    visibility 0s linear 0.3s;
+  /* Always-on glass — independent of nav scroll state */
   background: var(--c-surface);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   border-bottom: var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   padding: 1.25rem clamp(1.25rem, 5vw, 3rem) 1.5rem;
+  /* Sits below fixed nav bar */
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
-.nav__mobile.open { display: block; }
+.nav__mobile.open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity 0.3s var(--ease-silk),
+    transform 0.3s var(--ease-silk),
+    visibility 0s linear 0s;
+}
 .nav__mobile li { padding: 0.875rem 0; border-bottom: 1px solid var(--c-border-2); }
 .nav__mobile li:last-child { border-bottom: none; }
 .nav__mobile a { font-size: 1.0625rem; color: var(--c-text-2); }
